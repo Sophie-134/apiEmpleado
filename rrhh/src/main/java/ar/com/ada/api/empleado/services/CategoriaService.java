@@ -36,4 +36,13 @@ public class CategoriaService {
         return listaVacia;
     }
 
+    public Categoria buscarEnCategoria(int categoriaId){
+        Optional<Categoria> catId = categoriaRepo.findById(categoriaId);
+        
+        if (catId.isPresent()) {
+            return catId.get();
+    }return null;
+    }
+
+    
 }
