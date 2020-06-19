@@ -46,4 +46,16 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleadoService.listarEmpleados());
     }
 
+    @GetMapping("/empleados/{id}")
+    public ResponseEntity<?> busarEmpleadoPorId(@PathVariable int id){
+    
+        Empleado empleado;
+        empleado= empleadoService.buscarEmpleadoPorId(id);
+        if (empleado != null) {
+            return ResponseEntity.ok(empleado);
+        }
+        //return ResponseEntity.notFound().build();//1na manera(builders,objeto q arma otro objeto)
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND); //2da manera(objeto)
+    }
+
 }
