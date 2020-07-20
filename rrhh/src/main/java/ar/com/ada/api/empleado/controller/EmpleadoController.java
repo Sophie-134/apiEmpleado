@@ -67,6 +67,7 @@ public class EmpleadoController {
     public ResponseEntity<?> actualizarSueldoEmpleado(@PathVariable int id, @RequestBody SueldoInfoRequest infoNueva) {
 
         Empleado empleadoOriginal = empleadoService.buscarEmpleadoPorId(id);
+        
 
         if (empleadoOriginal != null) {
             empleadoService.actualizarSueldoEmpleado(empleadoOriginal, infoNueva.sueldoNuevo);

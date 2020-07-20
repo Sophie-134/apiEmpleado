@@ -34,15 +34,18 @@ public class EmpleadoService {
         }
         return null;
     }
-
-    public void actualizarSueldoEmpleado(Empleado empleadoOriginal, BigDecimal sueldoActualizado) {
-        empleadoOriginal.setSueldo(sueldoActualizado);
-        empleadoRepo.save(empleadoOriginal);
+    
+    
+    public void actualizarSueldoEmpleado(Empleado empleado, BigDecimal sueldoActualizado) {
+       
+        empleado.setSueldo(sueldoActualizado);
+        empleadoRepo.save(empleado);
     }
 
-    public Object actualizarSueldoEmpleado() {
+    
+    /*public Object actualizarSueldoEmpleado() {
         return null;
-    }
+    }????*/
 
     // este actualiza para varios estados, no solo para dar de baja
     public void actualizarEstadoEmpleado(Empleado empleado, int estadoId) {
