@@ -90,7 +90,8 @@ public class EmpleadoController {
         
         if (empleado != null) {
 
-            empleadoService.buscarEmpleadoPorId(id);
+            empleadoService.borrarEmpleado(empleado);
+            
 
         GenericResponse resp = new GenericResponse();
         resp.isOk = true;

@@ -1,6 +1,7 @@
 package ar.com.ada.api.empleado.services;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,6 +56,8 @@ public class EmpleadoService {
 
     public void borrarEmpleado(Empleado empleado) {
         this.actualizarEstadoEmpleado(empleado, 0);
+        empleado.setFechaBaja(new Date());
+        empleadoRepo.save(empleado);
     }
 
 }
